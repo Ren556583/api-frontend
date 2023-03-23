@@ -185,11 +185,16 @@ const TableList: React.FC = () => {
       title: 'url',
       dataIndex: 'url',
       valueType: 'text',
+      render: (text) => {
+        return (<span style={{ wordWrap: 'break-word', wordBreak: 'break-word' }}>
+        {text}
+      </span>)
+      }
     },
     {
       title: '请求参数',
       dataIndex: 'requestParams',
-      valueType: 'jsonCode',
+      valueType: 'jsonCode'
     },
     {
       title: '请求头',
