@@ -210,6 +210,7 @@ const TableList: React.FC = () => {
       title: '状态',
       dataIndex: 'status',
       hideInForm: true,
+      width: '70px',
       valueEnum: {
         0: {
           text: '关闭',
@@ -225,6 +226,7 @@ const TableList: React.FC = () => {
       title: '操作',
       dataIndex: 'option',
       valueType: 'option',
+      width: '180px',
       render: (_, record) => [
         <a
           key="config"
@@ -235,14 +237,15 @@ const TableList: React.FC = () => {
         >
           修改
         </a>,
-        record.status === 0 ? <a
+        record.status === 0 ? <Button
           key="config"
+          type="link"
           onClick={() => {
             handleOnline(record);
           }}
         >
           发布
-        </a> : <Button
+        </Button> : <Button
           type="text"
           key="config"
           danger
